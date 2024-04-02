@@ -7,14 +7,14 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  greet:
+  greet-test:
     runs-on: ubuntu-latest
     steps:
      - name: Greet the User
-       run: echo "Hello World!"
-     - name: Show directory before checkout
+       run: echo "Hi there, user!"
+     - name: Show the directory before checking the code
        run: ls -l
-     - name: CHeck out code
+     - name: Check out the code
        uses: actions/checkout@v2
-     - name: Show directory after checkout
+     - name: Show the directory after checking the code
        run: ls -l
