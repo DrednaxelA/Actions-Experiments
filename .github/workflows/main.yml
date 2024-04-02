@@ -8,6 +8,8 @@ on:
     branches: [ "main" ]
 jobs:
   greet-test:
+    env:
+      MY_ENV: "Mike Hawk"
     runs-on: ubuntu-latest
     steps:
      - name: Greet the User
@@ -18,3 +20,7 @@ jobs:
        uses: actions/checkout@v3
      - name: Show the directory after checking the code
        run: ls -l
+     - name: Run a multi-line script to show env variables
+       run: 
+         echo "Hello $MY_ENV"
+         echo "Hello $GITHUB_ACTOR"
